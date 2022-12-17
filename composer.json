@@ -1,0 +1,26 @@
+{
+	"name": "devture/pimple-provider-phinx-migrations",
+	"type": "library",
+	"description": "Pimple Services Provider which provides DB migrations powered by Phinx",
+	"keywords": ["pimple", "database", "migrations", "phinx"],
+	"license": "BSD",
+	"authors": [
+		{
+			"name": "Lyubomir Popov",
+			"email": "lyubo@lpopov.net"
+		},
+		{
+			"name": "Slavi Pantaleev",
+			"email": "slavi@devture.com"
+		}
+	],
+	"require": {
+		"robmorgan/phinx": ">=0.8.0,<0.14",
+		"pimple/pimple": "<4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Devture\\PimpleProvider\\PhinxMigrations\\": "src/"
+		}
+	}
+}
