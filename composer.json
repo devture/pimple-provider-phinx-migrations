@@ -3,7 +3,7 @@
 	"type": "library",
 	"description": "Pimple Services Provider which provides DB migrations powered by Phinx",
 	"keywords": ["pimple", "database", "migrations", "phinx"],
-	"license": "BSD",
+	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "Lyubomir Popov",
