@@ -15,7 +15,7 @@
 		}
 	],
 	"require": {
-		"robmorgan/phinx": ">=0.8.0,<0.14",
+		"robmorgan/phinx": ">=0.8.0,<0.17",
 		"pimple/pimple": "<4.0"
 	},
 	"autoload": {
