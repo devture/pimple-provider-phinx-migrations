@@ -19,13 +19,16 @@ $dbMigrationsConfig = [
 			'adapter' => 'mysql',
 			'charset'=> 'utf8',
 			'collation' => 'utf8_general_ci',
+			// username:password@host[:port]/database. An environment whose uri is null is left out.
 			'uri' => 'username:password@localhost/db_name',
 		],
-		'paths' => [
-			'migrations' => 'migrations',
-		],
-		'migrations_base_path' => '/path/to/migrations-directory-parent',
 	],
+	'paths' => [
+		// Phinx resolves relative paths from the working directory, so an absolute path is safer.
+		'migrations' => '/path/to/migrations',
+	],
+	// Given to Phinx as its configuration file path (Phinx's %%PHINX_CONFIG_DIR%% is its parent directory).
+	'migrations_base_path' => '/path/to/app',
 ];
 ```
 
@@ -35,7 +38,7 @@ $dbMigrationsConfig = [
 ```php
 $container = new \Pimple\Container();
 
-$container['console'] = function () use ($container) {
+$container['console'] = function () use ($container, $dbMigrationsConfig) {
 	$console = new \Symfony\Component\Console\Application();
 
 	// Register some other console commands here
