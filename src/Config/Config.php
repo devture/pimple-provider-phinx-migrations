@@ -7,21 +7,19 @@ class Config extends PhinxConfig {
 	/**
 	 * Create a new instance of the config class using a PHP array.
 	 *
-	 * @param  array $configArray
+	 * @param array<string, mixed> $configArray
 	 * @throws \RuntimeException
-	 * @return Config
 	 */
-	public static function fromArray(array $configArray, $appBasePath) {
-		return new static($configArray, $appBasePath);
+	public static function fromArray(array $configArray, string $appBasePath): self {
+		return new self($configArray, $appBasePath);
 	}
 
 	/**
-	 * Loads the configuration.
+	 * Loads the configuration from the service provider's options.
 	 *
-	 * @param array $configOptions
-	 * @return Config
+	 * @param array<string, mixed> $configOptions
 	 */
-	public static function loadConfig(array $configOptions) {
+	public static function loadConfig(array $configOptions): self {
 		$configArr = $configOptions;
 		foreach($configArr['environments'] as $environment => $environmentData){
 			if(!is_array($environmentData)) {

@@ -3,13 +3,13 @@ namespace Devture\PimpleProvider\PhinxMigrations;
 
 class ServiceProvider implements \Pimple\ServiceProviderInterface {
 
-	private $config;
-
-	public function __construct(array $config) {
-		$this->config = $config;
+	/**
+	 * @param array<string, mixed> $config
+	 */
+	public function __construct(private array $config) {
 	}
 
-	public function register(\Pimple\Container $container) {
+	public function register(\Pimple\Container $container): void {
 		$config = $this->config;
 
 		$container['devture_phinx_migrations.console_command.create'] = function () use ($config) {

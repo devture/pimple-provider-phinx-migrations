@@ -11,9 +11,13 @@ use Devture\PimpleProvider\PhinxMigrations\Config\Config;
  */
 trait ConfigOptionsTrait {
 
-	protected $configOptions;
+	/** @var array<string, mixed> */
+	protected array $configOptions;
 
-	public function __construct($name = null, $configOptions = null) {
+	/**
+	 * @param array<string, mixed> $configOptions
+	 */
+	public function __construct(?string $name, array $configOptions) {
 		parent::__construct($name);
 
 		$this->configOptions = $configOptions;
