@@ -14,7 +14,7 @@ For Symfony Console 7 or older, use version 1.
 ```php
 $dbMigrationsConfig = [
 	'environments' => [
-		'default_database' => 'development',
+		'default_environment' => 'development',
 		'development' => [
 			'adapter' => 'mysql',
 			'charset'=> 'utf8',
