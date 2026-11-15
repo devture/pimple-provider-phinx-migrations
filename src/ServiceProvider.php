@@ -34,11 +34,11 @@ class ServiceProvider implements \Pimple\ServiceProviderInterface {
 
 		$container['devture_phinx_migrations.attach_commands_to_console'] = function () use ($container) {
 			return function (\Symfony\Component\Console\Application $application) use ($container): void {
-				$application->add($container['devture_phinx_migrations.console_command.create']);
-				$application->add($container['devture_phinx_migrations.console_command.migrate']);
-				$application->add($container['devture_phinx_migrations.console_command.rollback']);
-				$application->add($container['devture_phinx_migrations.console_command.status']);
-				$application->add($container['devture_phinx_migrations.console_command.test']);
+				$application->addCommand($container['devture_phinx_migrations.console_command.create']);
+				$application->addCommand($container['devture_phinx_migrations.console_command.migrate']);
+				$application->addCommand($container['devture_phinx_migrations.console_command.rollback']);
+				$application->addCommand($container['devture_phinx_migrations.console_command.status']);
+				$application->addCommand($container['devture_phinx_migrations.console_command.test']);
 			};
 		};
 	}

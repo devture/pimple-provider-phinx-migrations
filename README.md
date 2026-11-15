@@ -3,6 +3,12 @@
 This is a [Pimple](https://github.com/silexphp/Pimple) Service Provider which provides database migrations console commands, powered by [Phinx](https://phinx.org/).
 
 
+## Versions
+
+Version 2 requires Symfony Console 8, and with it PHP 8.4 and Phinx 0.16.12 or newer (the first Phinx to support Console 8): it registers the commands with `Application::addCommand()`, as Console 8 removed `Application::add()`.
+For Symfony Console 7 or older, use version 1.
+
+
 ## Configuration
 
 ```php
